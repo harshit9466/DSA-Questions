@@ -1,0 +1,44 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+
+        Map<Integer,Integer> map = new HashMap<>(); // this map holds the elements of array and also how many times an element is in the array.
+	    ArrayList<Integer> duplicateelements = new ArrayList<>();
+	    
+	        for(int i=0; i<nums.length; i++)
+	        {
+	        	int element = nums[i];
+	            map.put( element, (map.getOrDefault(element,0)+1) ); // adding array elements to may as its key and putting the number of times it has came in value part on Map.
+                 if(map.get(element) > 1)
+                 {
+                	 duplicateelement.add(nums[i]);// we can also return their indexes by doing duplicateelement.add(i).
+                 }
+	        }
+	        return duplicateelementindexes;
+    }
+    
+    
+}
+
+/*
+OPTIMISED Solution
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+	    	 ArrayList<Integer> ans = new ArrayList<Integer>();
+	                int duplicate = -1;
+	        for(int i = 0; i<nums.length; i++)
+	        {
+	            int cur = Math.abs(nums[i]);
+	            if(nums[cur-1] < 0)
+	            {
+	                duplicate = cur;
+	                ans.add(duplicate);
+	            }
+	            nums[cur-1] *= -1;
+	        }
+	                // Restore numbers
+	        for (int i = 0; i < nums.length; i++)
+	            nums[i] = Math.abs(nums[i]);
+	        return ans;
+    }
+}
+*/
