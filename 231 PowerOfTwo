@@ -1,0 +1,33 @@
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+     int ans = 1;
+        for(int i=0; i<=30; i++)
+        {
+        	 
+        	if (ans==n) // if any value of power of two is equal to the incoming value then is is a true.
+        	{
+        		return true;
+        	}
+            if(ans<Integer.MAX_VALUE) // for edge case '0' when 0 is coming in the input ans becomes 2^31 and gets out of integer max value.
+           ans = ans*2; // reusing ans for omtimised solution
+        }
+        return false;
+    }
+}
+
+/*
+Brute Force Solution
+class Solution {
+    public boolean isPowerOfTwo(int n) {
+    for(int i =0; i<=30; i++)
+        {
+        	int ans = (int) Math.pow(2, i);
+        	if (ans==n)
+        	{
+        		return true;
+        	}
+        }
+        return false;
+    }
+}
+*/
